@@ -39,4 +39,13 @@ return array(
 	 */
 
 	'hello(/:name)?' => array('welcome/hello', 'name' => 'hello'),
+
+	//Controller_Employeeのaction_show()を呼び出し
+	'test' => 'employee/show',
+
+	//Routes GET/employee to/employee/all and POST/employee to/employee/create
+	'employee' => array(array('GET', new Route('employee/all')), array('POST', new Route('employee/create'))),
+
+	//e.g. http://localhost:3000/public/employee/request/Jon
+	'employee/request(/:name)?' => array('employee/request', 'name' => 'name'),
 );
